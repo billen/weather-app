@@ -1,0 +1,55 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.app-name {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.select-city {
+  font-size: 18px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.weather-overview-selection {
+    text-align: center;
+}
+
+.forecast-table {
+  min-height: 100px;
+}
+
+.forecast-button {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.weather-detailed {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.weather-description-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.weather-description p{
+  padding: 0px;
+  margin: 0px;
+  font-weight: 600;
+}
+
+.dates {
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .weather-detailed{
+       display: none;
+    }
+}
