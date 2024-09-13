@@ -4,6 +4,7 @@ import WeatherContext from "../contexts/WeatherContext";
 import WeatherApi from "../services/WeatherApi";
 import { WeatherContextType } from "../types/WeatherContextType";
 import WeatherIcon from "./WeatherIcon";
+import { convertToCelsius } from "../utils/utils";
 
 
 function WeatherOverview() {
@@ -27,12 +28,13 @@ function WeatherOverview() {
                             <WeatherIcon icon={(weather.weather[0].main).toLowerCase()}></WeatherIcon>
                             <p>{weather.weather[0].main}</p>
                             <p>{weather.weather[0]?.description}</p>
+                            <p>{convertToCelsius(weather.main.temp, 0)} &deg;C </p>
                         </div>
                     :
                         <p> Could not retrieve weather</p>
             }
             {
-                weather.wind?.speed && <p className="wind-speed"> {weather.wind?.speed} m/s</p>
+                weather.wind?.speed && <p className="wind-speed">Wind: {weather.wind?.speed} m/s</p>
             }
         </div>
     );

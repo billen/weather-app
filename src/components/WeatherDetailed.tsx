@@ -6,6 +6,7 @@ import Cities from "../constants/Cities";
 import WeatherContext from "../contexts/WeatherContext";
 import WeatherApi from "../services/WeatherApi";
 import { WeatherContextType } from "../types/WeatherContextType";
+import { convertToCelsius } from "../utils/utils";
 
 function WeatherDetailed() {
     const context : WeatherContextType = useContext(WeatherContext);
@@ -27,11 +28,7 @@ function WeatherDetailed() {
     }, [context.currentCity])
 
 
-    // Utiliy Functions
-    const convertToCelsius = (kelvin: number, toFixed = 2) : string => {
-        return (kelvin - 273.15).toFixed(toFixed);
-    }
-    
+ 
     const extractDates = (data: []) => {
         //Assumed it's sorted from the API - which it is.
         let groupedData = _.groupBy(data, (row) => {return format(row['dt_txt'], "yyyy-MM-ddd")});
